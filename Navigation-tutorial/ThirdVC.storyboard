@@ -11,12 +11,24 @@
         <!--세번째-->
         <scene sceneID="8z5-Un-Jki">
             <objects>
-                <viewController storyboardIdentifier="ThridVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qf3-23-6dP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qf3-23-6dP" customClass="ThirdVC" customModule="Navigation_tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9aD-kE-KqB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세번째" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQs-9U-y50">
+                                <rect key="frame" x="118.66666666666669" y="237" width="156" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="weJ-d1-iN6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OQs-9U-y50" firstAttribute="centerX" secondItem="weJ-d1-iN6" secondAttribute="centerX" id="Y90-nQ-3LB"/>
+                            <constraint firstItem="OQs-9U-y50" firstAttribute="top" secondItem="weJ-d1-iN6" secondAttribute="top" constant="178" id="zbd-gv-ZZv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="세번째" id="FQf-VN-Q9r"/>
                 </viewController>

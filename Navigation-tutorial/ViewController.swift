@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var navToDetailVCBtn: UIButton!
     
+    @IBOutlet weak var navToThirdVCBtn: UIButton!
     
     
     var stepNumber: Int = 1 {
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
         
         navToSecondVCBtn.addTarget(self, action: #selector(navToSecondVC(_:)), for: .touchUpInside)
         navToDetailVCBtn.addTarget(self, action: #selector(navToDetailVC(_:)), for: .touchUpInside)
+        navToThirdVCBtn.addTarget(self, action: #selector(navToThirdVC(_:)), for: .touchUpInside)
     }
     
     @objc fileprivate func navToSecondVC(_ sender: UIButton) {
@@ -37,6 +39,10 @@ class ViewController: UIViewController {
     @objc fileprivate func navToDetailVC(_ sender: UIButton) {
         print(#fileID, #function, #line, "- ")
         self.performSegue(withIdentifier: "navToDetailVC", sender: self)
+    }
+    @objc fileprivate func navToThirdVC(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- ")
+        self.performSegue(withIdentifier: "navToThirdVC", sender: self)
     }
 
 

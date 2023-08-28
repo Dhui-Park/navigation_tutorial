@@ -16,38 +16,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-iR-Vwo">
-                                <rect key="frame" x="131" y="284" width="131.33333333333337" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="스토리보드 푸시"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mem-bR-x0j">
+                                <rect key="frame" x="123.66666666666669" y="394.33333333333331" width="146" height="88.666666666666686"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-iR-Vwo">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="세번째로 이동"/>
+                                        <connections>
+                                            <action selector="navToThirdVCAction:" destination="VSG-c3-qZH" eventType="touchUpInside" id="f3F-VV-6lX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMj-rc-sYY">
+                                        <rect key="frame" x="0.0" y="54.333333333333371" width="146" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="첫번째로 돌아가기"/>
+                                        <connections>
+                                            <action selector="navToThirdVCAction:" destination="VSG-c3-qZH" eventType="touchUpInside" id="BhS-Ro-dPt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k4h-yJ-hO1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="IBf-iR-Vwo" firstAttribute="top" secondItem="k4h-yJ-hO1" secondAttribute="top" constant="225" id="029-sq-W61"/>
-                            <constraint firstItem="IBf-iR-Vwo" firstAttribute="centerX" secondItem="k4h-yJ-hO1" secondAttribute="centerX" id="TjS-fH-tZU"/>
+                            <constraint firstItem="mem-bR-x0j" firstAttribute="centerY" secondItem="k4h-yJ-hO1" secondAttribute="centerY" id="g5E-cA-wgV"/>
+                            <constraint firstItem="mem-bR-x0j" firstAttribute="centerX" secondItem="k4h-yJ-hO1" secondAttribute="centerX" id="spc-Qe-PyP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="두번째" id="Gwq-Zo-imn"/>
                     <connections>
-                        <outlet property="navToThirdVCBtn" destination="IBf-iR-Vwo" id="2Zu-dw-sWO"/>
-                        <segue destination="exE-d3-6d8" kind="show" identifier="navToThirdVC" id="aGh-mX-8wX"/>
+                        <segue destination="hWE-ta-U61" kind="show" identifier="navToThirdVC" id="D8f-Wv-vRh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1W-0q-hdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="4"/>
+            <point key="canvasLocation" x="1799" y="-62"/>
         </scene>
-        <!--ThridVC-->
-        <scene sceneID="N67-et-v6J">
+        <!--ThirdVC-->
+        <scene sceneID="VHs-gj-Mc1">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ThridVC" storyboardName="ThridVC" referencedIdentifier="ThridVC" id="exE-d3-6d8" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="shf-vL-s5M"/>
+                <viewControllerPlaceholder storyboardName="ThirdVC" referencedIdentifier="ThirdVC" id="hWE-ta-U61" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nGh-3z-hMw"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d32-Hu-F48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYA-q0-DhT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2877" y="4"/>
+            <point key="canvasLocation" x="2743" y="-46"/>
         </scene>
     </scenes>
     <resources>

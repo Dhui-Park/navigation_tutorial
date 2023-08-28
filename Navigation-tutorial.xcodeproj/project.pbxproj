@@ -16,8 +16,9 @@
 		B79E867A2A9C7CEA00E9D1B7 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E86792A9C7CEA00E9D1B7 /* DetailVC.swift */; };
 		B79E867C2A9C888100E9D1B7 /* DetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79E867B2A9C888100E9D1B7 /* DetailVC.storyboard */; };
 		B79E867E2A9C89E600E9D1B7 /* SecondVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79E867D2A9C89E600E9D1B7 /* SecondVC.storyboard */; };
-		B79E86802A9C8A7A00E9D1B7 /* ThridVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79E867F2A9C8A7A00E9D1B7 /* ThridVC.storyboard */; };
+		B79E86802A9C8A7A00E9D1B7 /* ThirdVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79E867F2A9C8A7A00E9D1B7 /* ThirdVC.storyboard */; };
 		B79E86822A9C8B0000E9D1B7 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E86812A9C8B0000E9D1B7 /* SecondVC.swift */; };
+		B79E86842A9CB7DA00E9D1B7 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E86832A9CB7DA00E9D1B7 /* ThirdVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,9 @@
 		B79E86792A9C7CEA00E9D1B7 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		B79E867B2A9C888100E9D1B7 /* DetailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailVC.storyboard; sourceTree = "<group>"; };
 		B79E867D2A9C89E600E9D1B7 /* SecondVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondVC.storyboard; sourceTree = "<group>"; };
-		B79E867F2A9C8A7A00E9D1B7 /* ThridVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThridVC.storyboard; sourceTree = "<group>"; };
+		B79E867F2A9C8A7A00E9D1B7 /* ThirdVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThirdVC.storyboard; sourceTree = "<group>"; };
 		B79E86812A9C8B0000E9D1B7 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		B79E86832A9CB7DA00E9D1B7 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +76,8 @@
 				B79E867B2A9C888100E9D1B7 /* DetailVC.storyboard */,
 				B79E86812A9C8B0000E9D1B7 /* SecondVC.swift */,
 				B79E867D2A9C89E600E9D1B7 /* SecondVC.storyboard */,
-				B79E867F2A9C8A7A00E9D1B7 /* ThridVC.storyboard */,
+				B79E86832A9CB7DA00E9D1B7 /* ThirdVC.swift */,
+				B79E867F2A9C8A7A00E9D1B7 /* ThirdVC.storyboard */,
 				B79E86542A9C6C0100E9D1B7 /* Assets.xcassets */,
 				B79E86562A9C6C0100E9D1B7 /* LaunchScreen.storyboard */,
 				B79E86592A9C6C0100E9D1B7 /* Info.plist */,
@@ -141,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B79E86582A9C6C0100E9D1B7 /* LaunchScreen.storyboard in Resources */,
-				B79E86802A9C8A7A00E9D1B7 /* ThridVC.storyboard in Resources */,
+				B79E86802A9C8A7A00E9D1B7 /* ThirdVC.storyboard in Resources */,
 				B79E867E2A9C89E600E9D1B7 /* SecondVC.storyboard in Resources */,
 				B79E86552A9C6C0100E9D1B7 /* Assets.xcassets in Resources */,
 				B79E867C2A9C888100E9D1B7 /* DetailVC.storyboard in Resources */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79E86842A9CB7DA00E9D1B7 /* ThirdVC.swift in Sources */,
 				B79E86502A9C6C0000E9D1B7 /* ViewController.swift in Sources */,
 				B79E86822A9C8B0000E9D1B7 /* SecondVC.swift in Sources */,
 				B79E867A2A9C7CEA00E9D1B7 /* DetailVC.swift in Sources */,
