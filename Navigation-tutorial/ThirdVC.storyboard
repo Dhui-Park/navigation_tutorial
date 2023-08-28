@@ -17,24 +17,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세번째" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQs-9U-y50">
-                                <rect key="frame" x="118.66666666666669" y="237" width="156" height="72"/>
+                                <rect key="frame" x="118.66666666666669" y="236.99999999999997" width="156" height="71.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jIF-Jl-flf">
+                                <rect key="frame" x="123.66666666666669" y="394.33333333333331" width="146" height="88.666666666666686"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhQ-mq-hu3">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="첫번째로 돌아가기"/>
+                                        <connections>
+                                            <segue destination="9AX-lw-1D9" kind="unwind" unwindAction="goBackToFirstVCWithUnwindSegue:" id="QLv-KG-Kmu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECl-Pe-iDy">
+                                        <rect key="frame" x="0.0" y="54.333333333333371" width="146" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="두번째로 돌아가기"/>
+                                        <connections>
+                                            <action selector="goBackToSecondVC:" destination="qf3-23-6dP" eventType="touchUpInside" id="2Xr-8n-ACh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="weJ-d1-iN6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jIF-Jl-flf" firstAttribute="centerY" secondItem="weJ-d1-iN6" secondAttribute="centerY" id="7kd-To-h36"/>
                             <constraint firstItem="OQs-9U-y50" firstAttribute="centerX" secondItem="weJ-d1-iN6" secondAttribute="centerX" id="Y90-nQ-3LB"/>
+                            <constraint firstItem="jIF-Jl-flf" firstAttribute="centerX" secondItem="weJ-d1-iN6" secondAttribute="centerX" id="lKs-4G-a1C"/>
                             <constraint firstItem="OQs-9U-y50" firstAttribute="top" secondItem="weJ-d1-iN6" secondAttribute="top" constant="178" id="zbd-gv-ZZv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="세번째" id="FQf-VN-Q9r"/>
+                    <connections>
+                        <segue destination="9AX-lw-1D9" kind="unwind" identifier="goBackToSecondVC" unwindAction="goBackToSecondVCWithUnwindSegue:" id="AZo-J6-Oxs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQo-lc-8aD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="9AX-lw-1D9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2778" y="4"/>
+            <point key="canvasLocation" x="2777.8625954198474" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

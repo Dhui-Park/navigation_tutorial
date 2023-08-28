@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstVC: UIViewController {
     
     @IBOutlet weak var navToSecondVCBtn: UIButton!
     
@@ -50,12 +50,14 @@ class ViewController: UIViewController {
         
         // storyboard 가져오기
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        
-        vc.stepNumber = stepNumber + 1
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "FirstVC") as? FirstVC {
+            vc.stepNumber = stepNumber + 1
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @IBAction func goBackToFirstVC(unwindSegue: UIStoryboardSegue) {
+        print(#fileID, #function, #line, "- unwindSegue: \(unwindSegue.source) ")
     }
 }
 

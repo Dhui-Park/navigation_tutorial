@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mem-bR-x0j">
-                                <rect key="frame" x="123.66666666666669" y="394.33333333333331" width="146" height="88.666666666666686"/>
+                                <rect key="frame" x="59.333333333333343" y="367" width="274.66666666666663" height="143"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-iR-Vwo">
-                                        <rect key="frame" x="0.0" y="0.0" width="146" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="274.66666666666669" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="세번째로 이동"/>
                                         <connections>
@@ -28,11 +28,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMj-rc-sYY">
-                                        <rect key="frame" x="0.0" y="54.333333333333371" width="146" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="54.333333333333314" width="274.66666666666669" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="첫번째로 돌아가기"/>
                                         <connections>
-                                            <action selector="navToThirdVCAction:" destination="VSG-c3-qZH" eventType="touchUpInside" id="BhS-Ro-dPt"/>
+                                            <segue destination="Icm-xT-F0q" kind="unwind" identifier="goBackToFirstVC" unwindAction="goBackToFirstVCWithUnwindSegue:" id="L8h-yA-eKh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPA-va-cwC">
+                                        <rect key="frame" x="0.0" y="108.66666666666669" width="274.66666666666669" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="첫번째로 돌아가기 - perform segue"/>
+                                        <connections>
+                                            <action selector="goBackToFirstVC:" destination="VSG-c3-qZH" eventType="touchUpInside" id="nqo-9m-Asz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -48,9 +56,11 @@
                     <navigationItem key="navigationItem" title="두번째" id="Gwq-Zo-imn"/>
                     <connections>
                         <segue destination="hWE-ta-U61" kind="show" identifier="navToThirdVC" id="D8f-Wv-vRh"/>
+                        <segue destination="Icm-xT-F0q" kind="unwind" unwindAction="goBackToFirstVCWithUnwindSegue:" id="E6j-fe-xiK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1W-0q-hdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Icm-xT-F0q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1799" y="-62"/>
         </scene>

@@ -14,4 +14,9 @@ class ThirdVC: UIViewController {
         super.viewDidLoad()
         print(#fileID, #function, #line, "- ")
     }
+    
+    @IBAction func goBackToSecondVC(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- ")
+        self.performSegue(withIdentifier: "goBackToSecondVC", sender: self)
+    }
 }
