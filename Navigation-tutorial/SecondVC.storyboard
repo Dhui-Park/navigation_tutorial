@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VSG-c3-qZH">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--두번째-->
+        <scene sceneID="eB1-qU-ynl">
+            <objects>
+                <viewController storyboardIdentifier="SecondVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VSG-c3-qZH" customClass="SecondVC" customModule="Navigation_tutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dxh-tJ-umY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-iR-Vwo">
+                                <rect key="frame" x="131" y="284" width="131.33333333333337" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="스토리보드 푸시"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="k4h-yJ-hO1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IBf-iR-Vwo" firstAttribute="top" secondItem="k4h-yJ-hO1" secondAttribute="top" constant="225" id="029-sq-W61"/>
+                            <constraint firstItem="IBf-iR-Vwo" firstAttribute="centerX" secondItem="k4h-yJ-hO1" secondAttribute="centerX" id="TjS-fH-tZU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="두번째" id="Gwq-Zo-imn"/>
+                    <connections>
+                        <outlet property="navToThirdVCBtn" destination="IBf-iR-Vwo" id="2Zu-dw-sWO"/>
+                        <segue destination="exE-d3-6d8" kind="show" identifier="navToThirdVC" id="aGh-mX-8wX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1W-0q-hdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1854" y="4"/>
+        </scene>
+        <!--ThridVC-->
+        <scene sceneID="N67-et-v6J">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ThridVC" storyboardName="ThridVC" referencedIdentifier="ThridVC" id="exE-d3-6d8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="shf-vL-s5M"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d32-Hu-F48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2877" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

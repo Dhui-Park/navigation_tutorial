@@ -9,6 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var navToSecondVCBtn: UIButton!
+    
+    @IBOutlet weak var navToDetailVCBtn: UIButton!
+    
+    
+    
     var stepNumber: Int = 1 {
         // 프로퍼티 옵저버(stepNumber가 결정되면 어떤 로직을 굴리겠다.)
         didSet {
@@ -18,7 +24,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print(#fileID, #function, #line, "- ")
+        
+        navToSecondVCBtn.addTarget(self, action: #selector(navToSecondVC(_:)), for: .touchUpInside)
+        navToDetailVCBtn.addTarget(self, action: #selector(navToDetailVC(_:)), for: .touchUpInside)
+    }
+    
+    @objc fileprivate func navToSecondVC(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- ")
+        self.performSegue(withIdentifier: "navToSecondVC", sender: self)
+    }
+    @objc fileprivate func navToDetailVC(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- ")
+        self.performSegue(withIdentifier: "navToDetailVC", sender: self)
     }
 
 
