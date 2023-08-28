@@ -17,10 +17,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mem-bR-x0j">
-                                <rect key="frame" x="59.333333333333343" y="367" width="274.66666666666663" height="143"/>
+                                <rect key="frame" x="59.333333333333343" y="308.66666666666669" width="274.66666666666663" height="260.00000000000006"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp2-N9-nCq">
+                                        <rect key="frame" x="0.0" y="0.0" width="274.66666666666669" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Git-Hq-l4z">
+                                        <rect key="frame" x="0.0" y="56" width="274.66666666666669" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-iR-Vwo">
-                                        <rect key="frame" x="0.0" y="0.0" width="274.66666666666669" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="112" width="274.66666666666669" height="36"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="세번째로 이동"/>
                                         <connections>
@@ -28,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMj-rc-sYY">
-                                        <rect key="frame" x="0.0" y="54.333333333333314" width="274.66666666666669" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="168" width="274.66666666666669" height="36"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="첫번째로 돌아가기"/>
                                         <connections>
@@ -36,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPA-va-cwC">
-                                        <rect key="frame" x="0.0" y="108.66666666666669" width="274.66666666666669" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="223.99999999999994" width="274.66666666666669" height="36"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="첫번째로 돌아가기 - perform segue"/>
                                         <connections>
@@ -55,6 +66,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="두번째" id="Gwq-Zo-imn"/>
                     <connections>
+                        <outlet property="titleLabel" destination="Gp2-N9-nCq" id="aB0-9v-byn"/>
+                        <outlet property="userInputTextFieldFromSecondVC" destination="Git-Hq-l4z" id="GLa-eO-EFP"/>
                         <segue destination="hWE-ta-U61" kind="show" identifier="navToThirdVC" id="D8f-Wv-vRh"/>
                         <segue destination="Icm-xT-F0q" kind="unwind" unwindAction="goBackToFirstVCWithUnwindSegue:" id="E6j-fe-xiK"/>
                     </connections>

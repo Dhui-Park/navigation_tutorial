@@ -15,6 +15,8 @@ class FirstVC: UIViewController {
     
     @IBOutlet weak var navToThirdVCBtn: UIButton!
     
+    @IBOutlet weak var userInputTextField: UITextField!
+    
     
     var stepNumber: Int = 1 {
         // 프로퍼티 옵저버(stepNumber가 결정되면 어떤 로직을 굴리겠다.)
@@ -30,6 +32,33 @@ class FirstVC: UIViewController {
         navToSecondVCBtn.addTarget(self, action: #selector(navToSecondVC(_:)), for: .touchUpInside)
         navToDetailVCBtn.addTarget(self, action: #selector(navToDetailVC(_:)), for: .touchUpInside)
         navToThirdVCBtn.addTarget(self, action: #selector(navToThirdVC(_:)), for: .touchUpInside)
+    }
+    
+    // DetailVC의 viewDidLoad가 실행되기 전에 데이터를 넣어줄 수 있다.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        print(#fileID, #function, #line, "- segue: \(segue.destination)")
+        
+        if let detailVC = segue.destination as? DetailVC {
+            detailVC.someValue = userInputTextField.text ?? "no Value"
+        }
+    }
+    
+    // iOS 13+
+    @IBSegueAction func navToSecondVCWithData(coder: NSCoder, sender: Any?, segueIdentifier: String?) -> SecondVC? {
+        print(#fileID, #function, #line, "- segueIdentifier: \(segueIdentifier)")
+        
+        let dataToSend = userInputTextField.text ?? "no Value"
+        
+        return SecondVC(coder: coder, someValue: dataToSend)
+    }
+    
+    @IBSegueAction func navToThirdVCWithData(coder: NSCoder, sender: Any?, segueIdentifier: String?) -> ThirdVC? {
+        print(#fileID, #function, #line, "- segueIdentifier: \(segueIdentifier)")
+        
+        let dataToSend = userInputTextField.text ?? "no Value"
+        
+        return ThirdVC(coder: coder, someText: dataToSend)
     }
     
     @objc fileprivate func navToSecondVC(_ sender: UIButton) {

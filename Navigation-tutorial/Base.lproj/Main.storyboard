@@ -17,25 +17,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sBB-gy-18W">
-                                <rect key="frame" x="138.33333333333334" y="362" width="116.66666666666666" height="197.33333333333337"/>
+                                <rect key="frame" x="138.33333333333334" y="334.66666666666669" width="116.66666666666666" height="251.66666666666669"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLd-qI-gei">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQB-ce-maG">
                                         <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLd-qI-gei">
+                                        <rect key="frame" x="0.0" y="54.333333333333314" width="116.66666666666667" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="두번째로 이동"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8s-hL-SJb">
-                                        <rect key="frame" x="0.0" y="54.333333333333314" width="116.66666666666667" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="108.66666666666663" width="116.66666666666667" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="세번째로 이동"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehL-RU-vF5">
-                                        <rect key="frame" x="0.0" y="108.66666666666669" width="116.66666666666667" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="163" width="116.66666666666667" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="디테일로 이동"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zq-yF-Ils">
-                                        <rect key="frame" x="0.0" y="163" width="116.66666666666667" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="217.33333333333331" width="116.66666666666667" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="프로그램 푸시"/>
                                         <connections>
@@ -57,9 +62,10 @@
                         <outlet property="navToDetailVCBtn" destination="ehL-RU-vF5" id="5Fh-h5-YVB"/>
                         <outlet property="navToSecondVCBtn" destination="yLd-qI-gei" id="UUm-hf-cfK"/>
                         <outlet property="navToThirdVCBtn" destination="l8s-hL-SJb" id="o8W-q3-JKe"/>
+                        <outlet property="userInputTextField" destination="GQB-ce-maG" id="ZQB-RI-qxm"/>
                         <segue destination="yC7-Ll-ecE" kind="show" identifier="navToDetailVC" id="Lem-6G-dXD"/>
-                        <segue destination="AZ9-KE-vu0" kind="show" identifier="navToSecondVC" id="yrg-NQ-b9N"/>
-                        <segue destination="ENw-Bg-xOL" kind="show" identifier="navToThirdVC" id="00b-0K-6nW"/>
+                        <segue destination="AZ9-KE-vu0" kind="show" identifier="navToSecondVC" destinationCreationSelector="navToSecondVCWithDataWithCoder:sender:segueIdentifier:" id="yrg-NQ-b9N"/>
+                        <segue destination="ENw-Bg-xOL" kind="show" identifier="navToThirdVC" destinationCreationSelector="navToThirdVCWithDataWithCoder:sender:segueIdentifier:" id="00b-0K-6nW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

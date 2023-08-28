@@ -32,6 +32,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nPf-ge-NID"/>
+                    <connections>
+                        <outlet property="bigLabel" destination="TBq-O1-z49" id="ZU0-dE-lgg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3S-v5-tux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

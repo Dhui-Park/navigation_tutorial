@@ -10,11 +10,43 @@ import UIKit
 
 class SecondVC: UIViewController {
     
+    var someValue: String = "" {
+        didSet {
+            print(#fileID, #function, #line, "- someValue: \(someValue)")
+        }
+    }
+    
+    @IBOutlet weak var userInputTextFieldFromSecondVC: UITextField!
+    
+    init?(coder: NSCoder, someValue: String) {
+        self.someValue = someValue
+        super.init(coder: coder)
+        print(#fileID, #function, #line, "- ")
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        print(#fileID, #function, #line, "- ")
+    }
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleLabel.text = someValue
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(#fileID, #function, #line, "- ")
+        
+        if let thirdVC = segue.destination as? ThirdVC {
+            thirdVC.someValue = userInputTextFieldFromSecondVC.text ?? "no Value"
+        }
+    }
+    
+    
+    
     @IBAction func navToThirdVCAction(_ sender: UIButton) {
         print(#fileID, #function, #line, "- ")
         self.performSegue(withIdentifier: "navToThirdVC", sender: self)

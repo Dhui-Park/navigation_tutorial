@@ -23,10 +23,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jIF-Jl-flf">
-                                <rect key="frame" x="123.66666666666669" y="394.33333333333331" width="146" height="88.666666666666686"/>
+                                <rect key="frame" x="123.66666666666669" y="340" width="146" height="197.33333333333337"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhQ-mq-hu3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di9-7Y-UQ1">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0m-MC-rGt">
+                                        <rect key="frame" x="0.0" y="54.333333333333314" width="146" height="34.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhQ-mq-hu3">
+                                        <rect key="frame" x="0.0" y="108.66666666666669" width="146" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="첫번째로 돌아가기"/>
                                         <connections>
@@ -34,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECl-Pe-iDy">
-                                        <rect key="frame" x="0.0" y="54.333333333333371" width="146" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="163" width="146" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="두번째로 돌아가기"/>
                                         <connections>
@@ -55,6 +67,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="세번째" id="FQf-VN-Q9r"/>
                     <connections>
+                        <outlet property="fromFirstVCLabel" destination="di9-7Y-UQ1" id="lyi-aA-08u"/>
+                        <outlet property="fromSecondVCLabel" destination="n0m-MC-rGt" id="G7s-2r-19i"/>
                         <segue destination="9AX-lw-1D9" kind="unwind" identifier="goBackToSecondVC" unwindAction="goBackToSecondVCWithUnwindSegue:" id="AZo-J6-Oxs"/>
                     </connections>
                 </viewController>
@@ -67,6 +81,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
