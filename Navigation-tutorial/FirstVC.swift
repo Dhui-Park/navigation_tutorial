@@ -17,6 +17,9 @@ class FirstVC: UIViewController {
     
     @IBOutlet weak var userInputTextField: UITextField!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var fromThirdVCLabel: UILabel!
     
     var stepNumber: Int = 1 {
         // 프로퍼티 옵저버(stepNumber가 결정되면 어떤 로직을 굴리겠다.)
@@ -35,6 +38,7 @@ class FirstVC: UIViewController {
     }
     
     // DetailVC의 viewDidLoad가 실행되기 전에 데이터를 넣어줄 수 있다.
+    // (준비) A -> B
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         print(#fileID, #function, #line, "- segue: \(segue.destination)")
@@ -87,6 +91,14 @@ class FirstVC: UIViewController {
     
     @IBAction func goBackToFirstVC(unwindSegue: UIStoryboardSegue) {
         print(#fileID, #function, #line, "- unwindSegue: \(unwindSegue.source) ")
+        
+        if let secondVC = unwindSegue.source as? SecondVC {
+            self.titleLabel.text = secondVC.userInputTextFieldFromSecondVC.text
+        }
+        
+        if let thirdVC = unwindSegue.source as? ThirdVC {
+            self.fromThirdVCLabel.text = thirdVC.userInputTextField.text
+        }
     }
 }
 

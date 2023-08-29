@@ -42,6 +42,7 @@ class SecondVC: UIViewController {
         
         if let thirdVC = segue.destination as? ThirdVC {
             thirdVC.someValue = userInputTextFieldFromSecondVC.text ?? "no Value"
+            thirdVC.someText = someValue
         }
     }
     

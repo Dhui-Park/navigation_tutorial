@@ -25,6 +25,8 @@ class ThirdVC: UIViewController {
     @IBOutlet weak var fromFirstVCLabel: UILabel!
     @IBOutlet weak var fromSecondVCLabel: UILabel!
     
+    @IBOutlet weak var userInputTextField: UITextField!
+    
     init?(coder: NSCoder, someText: String) {
         self.someText = someText
         super.init(coder: coder)
