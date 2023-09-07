@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sBB-gy-18W">
-                                <rect key="frame" x="30" y="232.66666666666663" width="333" height="456"/>
+                                <rect key="frame" x="30" y="133" width="333" height="660"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbm-wz-kcv">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="48"/>
@@ -26,18 +26,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNc-xh-R1y">
-                                        <rect key="frame" x="0.0" y="68.000000000000028" width="333" height="48"/>
+                                        <rect key="frame" x="0.0" y="68" width="333" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                                         <color key="textColor" systemColor="systemIndigoColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQB-ce-maG">
-                                        <rect key="frame" x="0.0" y="136.00000000000003" width="333" height="48"/>
+                                        <rect key="frame" x="0.0" y="136" width="333" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLd-qI-gei">
-                                        <rect key="frame" x="0.0" y="204.00000000000003" width="333" height="48"/>
+                                        <rect key="frame" x="0.0" y="204" width="333" height="48"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="두번째로 이동"/>
                                     </button>
@@ -59,15 +59,48 @@
                                             <action selector="onPushBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SGa-UE-Fsb"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9G-IT-whm" customClass="NavigationButton" customModule="Navigation_tutorial" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="476" width="333" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="프로그램 - 두번째로 이동"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="route" value="SecondVC"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="handlePushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4DR-Zq-gva"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS5-Zk-Imv" customClass="NavigationButton" customModule="Navigation_tutorial" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="544" width="333" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="프로그램 - 세번째로 이동"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="route" value="ThirdVC"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="handlePushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bHf-6Y-ZNV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksj-mn-Il1" customClass="NavigationButton" customModule="Navigation_tutorial" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="612" width="333" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="프로그램 - 디테일로 이동"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="route" value="DetailVC"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="handlePushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZ6-jj-dmr"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sBB-gy-18W" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BcY-13-itD"/>
                             <constraint firstItem="sBB-gy-18W" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="E4u-gI-53e"/>
                             <constraint firstItem="sBB-gy-18W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="FaZ-ja-tk1"/>
+                            <constraint firstItem="sBB-gy-18W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="sT0-f4-ueV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="첫번째" id="fVW-Eb-Qvg"/>

@@ -100,5 +100,27 @@ class FirstVC: UIViewController {
             self.fromThirdVCLabel.text = thirdVC.userInputTextField.text
         }
     }
+    
+    @IBAction func handlePushAction(_ sender: NavigationButton) {
+        print(#fileID, #function, #line, "- sender: \(sender.route)")
+        
+        var vcToNavigation: UIViewController? = nil
+        
+        switch sender.route {
+        case "SecondVC":
+            vcToNavigation = SecondVC.getInstance()
+        case "ThirdVC":
+            vcToNavigation = ThirdVC.getInstance()
+        case "DetailVC":
+            vcToNavigation = DetailVC.getInstance()
+        default:
+            break
+        }
+        
+        if let vc = vcToNavigation {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
 }
 

@@ -62,4 +62,33 @@ class SecondVC: UIViewController {
         print(#fileID, #function, #line, "- unwindSegueSecond: \(unwindSegue.source) ")
         
     }
+    
+    @IBAction func doThirdPushAction(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- ")
+        
+        if let thirdVC = ThirdVC.getInstance("ThirdVC") {
+            self.navigationController?.pushViewController(thirdVC, animated: true)
+        }
+    }
+    
 }
+
+
+protocol Storyboarded {
+    static func getInstance(_ storyboardName: String?) -> Self?
+}
+
+extension Storyboarded where Self: UIViewController {
+    static func getInstance(_ storyboardName: String? = nil) -> Self? {
+        
+        let name = storyboardName ?? String(describing: self)
+        // storyboard 가져오기
+        let storyboard = UIStoryboard(name: name, bundle: Bundle.main)
+        
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as? Self
+    }
+}
+
+extension SecondVC: Storyboarded { }
+extension ThirdVC: Storyboarded { }
+extension DetailVC: Storyboarded { }

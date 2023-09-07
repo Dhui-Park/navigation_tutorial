@@ -19,6 +19,7 @@
 		B79E86802A9C8A7A00E9D1B7 /* ThirdVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79E867F2A9C8A7A00E9D1B7 /* ThirdVC.storyboard */; };
 		B79E86822A9C8B0000E9D1B7 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E86812A9C8B0000E9D1B7 /* SecondVC.swift */; };
 		B79E86842A9CB7DA00E9D1B7 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E86832A9CB7DA00E9D1B7 /* ThirdVC.swift */; };
+		B7EEAD8E2AA9908D0046FDB0 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EEAD8D2AA9908D0046FDB0 /* NavigationButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B79E867F2A9C8A7A00E9D1B7 /* ThirdVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThirdVC.storyboard; sourceTree = "<group>"; };
 		B79E86812A9C8B0000E9D1B7 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		B79E86832A9CB7DA00E9D1B7 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
+		B7EEAD8D2AA9908D0046FDB0 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				B79E86542A9C6C0100E9D1B7 /* Assets.xcassets */,
 				B79E86562A9C6C0100E9D1B7 /* LaunchScreen.storyboard */,
 				B79E86592A9C6C0100E9D1B7 /* Info.plist */,
+				B7EEAD8D2AA9908D0046FDB0 /* NavigationButton.swift */,
 			);
 			path = "Navigation-tutorial";
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7EEAD8E2AA9908D0046FDB0 /* NavigationButton.swift in Sources */,
 				B79E86842A9CB7DA00E9D1B7 /* ThirdVC.swift in Sources */,
 				B79E86502A9C6C0000E9D1B7 /* FirstVC.swift in Sources */,
 				B79E86822A9C8B0000E9D1B7 /* SecondVC.swift in Sources */,

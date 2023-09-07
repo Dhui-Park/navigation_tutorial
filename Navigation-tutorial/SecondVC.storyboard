@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mem-bR-x0j">
-                                <rect key="frame" x="30" y="308.66666666666669" width="333" height="260.00000000000006"/>
+                                <rect key="frame" x="30" y="280.66666666666669" width="333" height="316.00000000000006"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp2-N9-nCq">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="36"/>
@@ -47,11 +47,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPA-va-cwC">
-                                        <rect key="frame" x="0.0" y="223.99999999999994" width="333" height="36"/>
+                                        <rect key="frame" x="0.0" y="224" width="333" height="36"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="첫번째로 돌아가기 - perform segue"/>
                                         <connections>
                                             <action selector="goBackToFirstVC:" destination="VSG-c3-qZH" eventType="touchUpInside" id="nqo-9m-Asz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEr-IX-OQ1">
+                                        <rect key="frame" x="0.0" y="279.99999999999994" width="333" height="36"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="프로그램 - 세번째로 이동"/>
+                                        <connections>
+                                            <action selector="doThirdPushAction:" destination="VSG-c3-qZH" eventType="touchUpInside" id="TWd-Zl-xxg"/>
                                         </connections>
                                     </button>
                                 </subviews>
