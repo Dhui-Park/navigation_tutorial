@@ -112,11 +112,36 @@ class FirstVC: UIViewController {
         
         switch sender.route {
         case .secondVC:
-            vcToNavigation = SecondVC.getInstance()
+//            vcToNavigation = SecondVC.getInstance()
+            let dataToSend = userInputTextField.text ?? "no Value"
+            
+            let storyboard = UIStoryboard(name: "SecondVC", bundle: Bundle.main)
+            guard let secondVC = storyboard.instantiateViewController(identifier: "SecondVC", creator: { coder in
+                return SecondVC(coder: coder, someValue: dataToSend)
+            }) as? SecondVC else { return }
+            
+            vcToNavigation = secondVC
+            
         case .thirdVC:
-            vcToNavigation = ThirdVC.getInstance()
+//            vcToNavigation = ThirdVC.getInstance()
+            
+            let dataToSend = userInputTextField.text ?? "no Value"
+            
+            let thirdStoryboard = UIStoryboard(name: "ThirdVC", bundle: Bundle.main)
+            guard let thirdVC = thirdStoryboard.instantiateInitialViewController(creator: { coder in
+                return ThirdVC(coder: coder, someText: dataToSend)
+            }) as? ThirdVC else { return }
+            
+            vcToNavigation = thirdVC
+            
         case .detailVC:
             vcToNavigation = DetailVC.getInstance()
+        case .fourthVC:
+            let fourthVC = FourthVC(stepNumber: 1)
+            
+            vcToNavigation = fourthVC
+        case .fifthVC:
+            vcToNavigation = FifthVC()
         default:
             break
         }

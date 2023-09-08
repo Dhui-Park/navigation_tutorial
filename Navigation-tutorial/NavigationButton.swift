@@ -11,10 +11,12 @@ import UIKit
 class NavigationButton: UIButton {
     
     enum Route: String {
+        case detailVC = "DetailVC"
         case firstVC = "FirstVC"
         case secondVC = "SecondVC"
         case thirdVC = "ThirdVC"
-        case detailVC = "DetailVC"
+        case fourthVC = "FourthVC"
+        case fifthVC = "FifthVC"
     }
     
     var route: Route = Route.detailVC
