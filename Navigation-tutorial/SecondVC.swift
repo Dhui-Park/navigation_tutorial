@@ -71,6 +71,24 @@ class SecondVC: UIViewController {
         }
     }
     
+    @IBAction func popToFirstVC(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- ")
+        // TODO: 첫번째로 돌아가기
+        // 나에게 주어진 도구가 무엇인지 본다 -
+        // - 네비게이션 컨트롤러 - [화면, 화면] 안에 어떤 화면들이 있는지 알 수 있다.
+        // - 특정 화면으로 이동할 수 있는 함수가 존대 - popToViewController
+        
+        // 내가 이동하려고 하는 화면을 찾아야 한다. - 자료형 혹은 아이디?
+        print("\(self.navigationController?.viewControllers)")
+        if let firstVC = self.navigationController?.viewControllers[0] {
+            
+            self.navigationController?.popToViewController(firstVC, animated: true)
+        }
+        
+        
+    }
+    
+    
 }
 
 
@@ -89,6 +107,7 @@ extension Storyboarded where Self: UIViewController {
     }
 }
 
+extension FirstVC: Storyboarded { }
 extension SecondVC: Storyboarded { }
 extension ThirdVC: Storyboarded { }
 extension DetailVC: Storyboarded { }

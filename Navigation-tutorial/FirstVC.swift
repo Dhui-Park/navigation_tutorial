@@ -21,16 +21,20 @@ class FirstVC: UIViewController {
     
     @IBOutlet weak var fromThirdVCLabel: UILabel!
     
+    @IBOutlet weak var stepLabel: UILabel!
+    
+    
     var stepNumber: Int = 1 {
         // 프로퍼티 옵저버(stepNumber가 결정되면 어떤 로직을 굴리겠다.)
         didSet {
             self.title = "StepNumber: \(stepNumber)"
         }
     }
+    var stepNumberToPop: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#fileID, #function, #line, "- ")
+        print(#fileID, #function, #line, "- stepNumber: \(stepNumber)")
         
         navToSecondVCBtn.addTarget(self, action: #selector(navToSecondVC(_:)), for: .touchUpInside)
         navToDetailVCBtn.addTarget(self, action: #selector(navToDetailVC(_:)), for: .touchUpInside)
@@ -107,11 +111,11 @@ class FirstVC: UIViewController {
         var vcToNavigation: UIViewController? = nil
         
         switch sender.route {
-        case "SecondVC":
+        case .secondVC:
             vcToNavigation = SecondVC.getInstance()
-        case "ThirdVC":
+        case .thirdVC:
             vcToNavigation = ThirdVC.getInstance()
-        case "DetailVC":
+        case .detailVC:
             vcToNavigation = DetailVC.getInstance()
         default:
             break
@@ -122,5 +126,66 @@ class FirstVC: UIViewController {
         }
         
     }
+    
+    @IBAction func handleStepNumber(_ sender: UIStepper) {
+        print(#fileID, #function, #line, "- sender: \(sender.value)")
+        
+        let stepValue = Int(sender.value)
+        
+        stepNumberToPop = stepValue
+        
+        stepLabel.text = "이동할 FirstVC step: \(stepNumberToPop)"
+        
+    }
+    
+    @IBAction func popToFirstVCWithStep(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- stepNumberToPop: \(stepNumberToPop)")
+        
+        guard let viewControllers = self.navigationController?.viewControllers,
+              let firstVC = viewControllers.first(where: { vcItem in
+                  
+                  if let vc = vcItem as? FirstVC {
+                      return vc.stepNumber == stepNumberToPop
+                  }
+                  
+                  return false
+              }) else { return }
+        
+        self.navigationController?.popToViewController(firstVC, animated: true)
+        
+    }
+    
+    @IBAction func handleNavStack(_ sender: NavigationButton) {
+        print(#fileID, #function, #line, "- ")
+        
+        switch sender.navStackAction {
+        case .popLast:
+            print(#fileID, #function, #line, "- popLast")
+            self.navigationController?.popViewController(animated: true)
+        case .deleteAll:
+            print(#fileID, #function, #line, "- deleteAll")
+            self.navigationController?.popToRootViewController(animated: true)
+        case .reset:
+            print(#fileID, #function, #line, "- reset")
+            
+            var vcStack: [UIViewController] = []
+            
+            guard let secondVC = SecondVC.getInstance(),
+                  let thirdVC = ThirdVC.getInstance(),
+                  let detailVC = DetailVC.getInstance(),
+                  let rootVC = self.navigationController?.topViewController,
+                  let existingVCStack = self.navigationController?.viewControllers else { return }
+            
+            vcStack.append(contentsOf: existingVCStack)
+            
+            vcStack.append(contentsOf: [secondVC, thirdVC, detailVC])
+                  
+            
+            self.navigationController?.setViewControllers(vcStack, animated: true)
+        }
+    }
+    
+    
+    
 }
 

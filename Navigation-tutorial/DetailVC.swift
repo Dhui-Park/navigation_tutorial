@@ -23,6 +23,7 @@ class DetailVC: UIViewController {
         print(#fileID, #function, #line, "- ")
         
         bigLabel.text = someValue
+        self.title = "Detail"
     }
     
 }
