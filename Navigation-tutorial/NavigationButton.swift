@@ -17,6 +17,17 @@ class NavigationButton: UIButton {
         case thirdVC = "ThirdVC"
         case fourthVC = "FourthVC"
         case fifthVC = "FifthVC"
+        
+        var vcType: UIViewController.Type {
+            switch self {
+            case .detailVC: return DetailVC.self
+            case .firstVC: return FirstVC.self
+            case .secondVC: return SecondVC.self
+            case .thirdVC: return ThirdVC.self
+            case .fourthVC: return FourthVC.self
+            case .fifthVC: return FifthVC.self
+            }
+        }
     }
     
     var route: Route = Route.detailVC

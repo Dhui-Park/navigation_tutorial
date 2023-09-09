@@ -23,6 +23,7 @@
 		B7EEAD902AAB34EA0046FDB0 /* FourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EEAD8F2AAB34EA0046FDB0 /* FourthVC.swift */; };
 		B7EEAD922AAB35250046FDB0 /* FourthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7EEAD912AAB35250046FDB0 /* FourthVC.xib */; };
 		B7EEAD942AAB36250046FDB0 /* FifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EEAD932AAB36250046FDB0 /* FifthVC.swift */; };
+		B7EEAD962AAB49720046FDB0 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EEAD952AAB49720046FDB0 /* UINavigationController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B7EEAD8F2AAB34EA0046FDB0 /* FourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthVC.swift; sourceTree = "<group>"; };
 		B7EEAD912AAB35250046FDB0 /* FourthVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FourthVC.xib; sourceTree = "<group>"; };
 		B7EEAD932AAB36250046FDB0 /* FifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthVC.swift; sourceTree = "<group>"; };
+		B7EEAD952AAB49720046FDB0 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				B79E86562A9C6C0100E9D1B7 /* LaunchScreen.storyboard */,
 				B79E86592A9C6C0100E9D1B7 /* Info.plist */,
 				B7EEAD8D2AA9908D0046FDB0 /* NavigationButton.swift */,
+				B7EEAD952AAB49720046FDB0 /* UINavigationController+Ext.swift */,
 			);
 			path = "Navigation-tutorial";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				B79E86502A9C6C0000E9D1B7 /* FirstVC.swift in Sources */,
 				B79E86822A9C8B0000E9D1B7 /* SecondVC.swift in Sources */,
 				B79E867A2A9C7CEA00E9D1B7 /* DetailVC.swift in Sources */,
+				B7EEAD962AAB49720046FDB0 /* UINavigationController+Ext.swift in Sources */,
 				B79E864C2A9C6C0000E9D1B7 /* AppDelegate.swift in Sources */,
 				B79E864E2A9C6C0000E9D1B7 /* SceneDelegate.swift in Sources */,
 				B7EEAD942AAB36250046FDB0 /* FifthVC.swift in Sources */,

@@ -166,18 +166,8 @@ class FirstVC: UIViewController {
     @IBAction func popToFirstVCWithStep(_ sender: UIButton) {
         print(#fileID, #function, #line, "- stepNumberToPop: \(stepNumberToPop)")
         
-        guard let viewControllers = self.navigationController?.viewControllers,
-              let firstVC = viewControllers.first(where: { vcItem in
-                  
-                  if let vc = vcItem as? FirstVC {
-                      return vc.stepNumber == stepNumberToPop
-                  }
-                  
-                  return false
-              }) else { return }
-        
-        self.navigationController?.popToViewController(firstVC, animated: true)
-        
+        self.navigationController?.popToViewController(destinationVCType: FirstVC.self,
+                                                       when: { $0.stepNumber == self.stepNumberToPop })
     }
     
     @IBAction func handleNavStack(_ sender: NavigationButton) {
