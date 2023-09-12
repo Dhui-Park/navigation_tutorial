@@ -18,6 +18,8 @@ class SecondVC: UIViewController {
     
     @IBOutlet weak var userInputTextFieldFromSecondVC: UITextField!
     
+    var dismissedWithData: ((String) -> Void)? = nil
+    
     init?(coder: NSCoder, someValue: String) {
         self.someValue = someValue
         super.init(coder: coder)
@@ -78,16 +80,24 @@ class SecondVC: UIViewController {
         // - 네비게이션 컨트롤러 - [화면, 화면] 안에 어떤 화면들이 있는지 알 수 있다.
         // - 특정 화면으로 이동할 수 있는 함수가 존대 - popToViewController
         
-        // 내가 이동하려고 하는 화면을 찾아야 한다. - 자료형 혹은 아이디?
-        print("\(self.navigationController?.viewControllers)")
-        if let firstVC = self.navigationController?.viewControllers[0] {
-            
-            self.navigationController?.popToViewController(firstVC, animated: true)
-        }
-        
-        
+        self.navigationController?
+            .popToViewController(destinationVCType: FirstVC.self,
+                                 completion: {
+                self.dismissedWithData?(self.userInputTextFieldFromSecondVC.text ?? "")
+            })
     }
     
+}
+
+extension SecondVC: NavigationPoppedDelegate {
+    
+    func popped(sender: UIViewController) {
+        print(#fileID, #function, #line, "- sender: \(sender)")
+        
+        if let thirdVC = sender as? ThirdVC {
+            print(#fileID, #function, #line, "- userInput: \(thirdVC.userInputTextField.text ?? "")")
+        }
+    }
     
 }
 

@@ -22,18 +22,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Vo-yn-xlp">
+                                <rect key="frame" x="20" y="191" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQb-Uv-Wmo">
+                                <rect key="frame" x="20" y="276" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="닫기"/>
+                                <connections>
+                                    <action selector="dismissBtnClicked:" destination="0T8-kz-uf7" eventType="touchUpInside" id="fBy-4b-9uc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="85N-vy-Dka"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TBq-O1-z49" firstAttribute="centerX" secondItem="85N-vy-Dka" secondAttribute="centerX" id="7u3-i9-8vX"/>
+                            <constraint firstItem="3Vo-yn-xlp" firstAttribute="trailing" secondItem="TBq-O1-z49" secondAttribute="trailing" id="BiG-va-qrk"/>
+                            <constraint firstItem="OQb-Uv-Wmo" firstAttribute="top" secondItem="3Vo-yn-xlp" secondAttribute="bottom" constant="51" id="E6i-aq-wWj"/>
+                            <constraint firstItem="OQb-Uv-Wmo" firstAttribute="leading" secondItem="3Vo-yn-xlp" secondAttribute="leading" id="FIt-L5-Oj3"/>
+                            <constraint firstItem="3Vo-yn-xlp" firstAttribute="top" secondItem="TBq-O1-z49" secondAttribute="bottom" constant="40" id="KG7-ar-CNO"/>
                             <constraint firstItem="TBq-O1-z49" firstAttribute="top" secondItem="85N-vy-Dka" secondAttribute="top" constant="20" id="RQL-9h-lbi"/>
+                            <constraint firstItem="3Vo-yn-xlp" firstAttribute="leading" secondItem="TBq-O1-z49" secondAttribute="leading" id="bs1-yv-X3K"/>
                             <constraint firstItem="TBq-O1-z49" firstAttribute="leading" secondItem="85N-vy-Dka" secondAttribute="leading" constant="20" id="rb1-6q-kM1"/>
+                            <constraint firstItem="OQb-Uv-Wmo" firstAttribute="trailing" secondItem="3Vo-yn-xlp" secondAttribute="trailing" id="tHl-A8-Sps"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nPf-ge-NID"/>
                     <connections>
                         <outlet property="bigLabel" destination="TBq-O1-z49" id="ZU0-dE-lgg"/>
+                        <outlet property="userInputTextField" destination="3Vo-yn-xlp" id="fbn-Dx-NEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3S-v5-tux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

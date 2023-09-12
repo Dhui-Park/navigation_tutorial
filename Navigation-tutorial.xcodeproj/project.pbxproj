@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B74540F22AAF4979001959EA /* NavigationPoppedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74540F12AAF4979001959EA /* NavigationPoppedDelegate.swift */; };
 		B79E864C2A9C6C0000E9D1B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E864B2A9C6C0000E9D1B7 /* AppDelegate.swift */; };
 		B79E864E2A9C6C0000E9D1B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E864D2A9C6C0000E9D1B7 /* SceneDelegate.swift */; };
 		B79E86502A9C6C0000E9D1B7 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E864F2A9C6C0000E9D1B7 /* FirstVC.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B74540F12AAF4979001959EA /* NavigationPoppedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPoppedDelegate.swift; sourceTree = "<group>"; };
 		B79E86482A9C6C0000E9D1B7 /* Navigation-tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigation-tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79E864B2A9C6C0000E9D1B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B79E864D2A9C6C0000E9D1B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				B79E86592A9C6C0100E9D1B7 /* Info.plist */,
 				B7EEAD8D2AA9908D0046FDB0 /* NavigationButton.swift */,
 				B7EEAD952AAB49720046FDB0 /* UINavigationController+Ext.swift */,
+				B74540F12AAF4979001959EA /* NavigationPoppedDelegate.swift */,
 			);
 			path = "Navigation-tutorial";
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7EEAD8E2AA9908D0046FDB0 /* NavigationButton.swift in Sources */,
+				B74540F22AAF4979001959EA /* NavigationPoppedDelegate.swift in Sources */,
 				B79E86842A9CB7DA00E9D1B7 /* ThirdVC.swift in Sources */,
 				B7EEAD902AAB34EA0046FDB0 /* FourthVC.swift in Sources */,
 				B79E86502A9C6C0000E9D1B7 /* FirstVC.swift in Sources */,

@@ -120,6 +120,10 @@ class FirstVC: UIViewController {
                 return SecondVC(coder: coder, someValue: dataToSend)
             }) as? SecondVC else { return }
             
+            secondVC.dismissedWithData = { receivedData in
+                print(#fileID, #function, #line, "- receivedData: \(receivedData)")
+            }
+            
             vcToNavigation = secondVC
             
         case .thirdVC:
@@ -132,10 +136,20 @@ class FirstVC: UIViewController {
                 return ThirdVC(coder: coder, someText: dataToSend)
             }) as? ThirdVC else { return }
             
+            thirdVC.delegate = self
+            
             vcToNavigation = thirdVC
             
         case .detailVC:
-            vcToNavigation = DetailVC.getInstance()
+            let detailVC = DetailVC.getInstance()
+            
+            // 클로져 이벤트가 들어왔을때에 대한 정의
+            detailVC?.dismissedWithData = { receivedValue in
+                print(#fileID, #function, #line, "- receivedValue: \(receivedValue)")
+                
+            }
+            
+            vcToNavigation = detailVC
         case .fourthVC:
             let fourthVC = FourthVC(stepNumber: 1)
             
@@ -199,8 +213,17 @@ class FirstVC: UIViewController {
             self.navigationController?.setViewControllers(vcStack, animated: true)
         }
     }
+}
+
+//MARK: - 네비게이션 관련 델리겟
+extension FirstVC: NavigationPoppedDelegate {
     
+    func popped(sender: UIViewController) {
+        if let thirdVC = sender as? ThirdVC {
+            let receivedData = thirdVC.userInputTextField.text ?? ""
+            print(#fileID, #function, #line, "- receivedData: \(receivedData)")
+        }
+    }
     
     
 }
-
