@@ -69,6 +69,7 @@ class SecondVC: UIViewController {
         print(#fileID, #function, #line, "- ")
         
         if let thirdVC = ThirdVC.getInstance("ThirdVC") {
+            thirdVC.delegate = self
             self.navigationController?.pushViewController(thirdVC, animated: true)
         }
     }

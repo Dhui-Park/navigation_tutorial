@@ -32,10 +32,34 @@ class FirstVC: UIViewController {
     }
     var stepNumberToPop: Int = 0
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(#fileID, #function, #line, "- ")
+        
+        // Notification event 받기
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(_:)), name: .NavigationPopEvent, object: nil)
+    }
+    
+    @objc fileprivate func handleNotification(_ sender: Notification) {
+        print(#fileID, #function, #line, "- ")
+        
+        guard let userInfo = sender.userInfo,
+              let senderType = userInfo["senderType"] as? UIViewController.Type,
+              let receivedData = userInfo["dataToSend"] as? String else { return }
+        
+        print(#fileID, #function, #line, "- 현재 step: \(self.stepNumber) senderType: \(senderType) receivedData: \(receivedData)")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print(#fileID, #function, #line, "- ")
+        
+        NotificationCenter.default.removeObserver(self, name: .NavigationPopEvent, object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(#fileID, #function, #line, "- stepNumber: \(stepNumber)")
-        
         navToSecondVCBtn.addTarget(self, action: #selector(navToSecondVC(_:)), for: .touchUpInside)
         navToDetailVCBtn.addTarget(self, action: #selector(navToDetailVC(_:)), for: .touchUpInside)
         navToThirdVCBtn.addTarget(self, action: #selector(navToThirdVC(_:)), for: .touchUpInside)
@@ -177,11 +201,24 @@ class FirstVC: UIViewController {
         
     }
     
+    // 첫번째로 돌아가기 with step
     @IBAction func popToFirstVCWithStep(_ sender: UIButton) {
         print(#fileID, #function, #line, "- stepNumberToPop: \(stepNumberToPop)")
         
         self.navigationController?.popToViewController(destinationVCType: FirstVC.self,
-                                                       when: { $0.stepNumber == self.stepNumberToPop })
+                                                       when: { $0.stepNumber == self.stepNumberToPop },
+                                                       completion: {
+            print(#fileID, #function, #line, "- ")
+            
+            let notiDataToSend = ["senderType": FirstVC.self,
+                                  "dataToSend": "\(self.stepNumber)에서 보낸다"]
+            
+            // Notification으로 event 보내기
+            NotificationCenter.default.post(name: .NavigationPopEvent,
+                                            object: nil,
+                                            userInfo: notiDataToSend
+            )
+        })
     }
     
     @IBAction func handleNavStack(_ sender: NavigationButton) {
