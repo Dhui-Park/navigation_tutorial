@@ -259,10 +259,10 @@
             </objects>
             <point key="canvasLocation" x="1798" y="120"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="UxN-Mu-Uj0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FAL-Wm-bMS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FAL-Wm-bMS" customClass="MyNavigationController" customModule="Navigation_tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mz6-oP-hEo">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

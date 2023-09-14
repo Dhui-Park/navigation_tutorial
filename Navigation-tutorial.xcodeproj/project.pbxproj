@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B74540F22AAF4979001959EA /* NavigationPoppedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74540F12AAF4979001959EA /* NavigationPoppedDelegate.swift */; };
 		B74540F42AB028EA001959EA /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74540F32AB028EA001959EA /* Notification+Name.swift */; };
+		B74540F62AB17989001959EA /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74540F52AB17989001959EA /* MyNavigationController.swift */; };
+		B74541222AB343CB001959EA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B74541212AB343CB001959EA /* RxCocoa */; };
+		B74541242AB343CB001959EA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B74541232AB343CB001959EA /* RxRelay */; };
+		B74541262AB343CB001959EA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B74541252AB343CB001959EA /* RxSwift */; };
 		B79E864C2A9C6C0000E9D1B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E864B2A9C6C0000E9D1B7 /* AppDelegate.swift */; };
 		B79E864E2A9C6C0000E9D1B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E864D2A9C6C0000E9D1B7 /* SceneDelegate.swift */; };
 		B79E86502A9C6C0000E9D1B7 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E864F2A9C6C0000E9D1B7 /* FirstVC.swift */; };
@@ -31,6 +35,7 @@
 /* Begin PBXFileReference section */
 		B74540F12AAF4979001959EA /* NavigationPoppedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPoppedDelegate.swift; sourceTree = "<group>"; };
 		B74540F32AB028EA001959EA /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
+		B74540F52AB17989001959EA /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		B79E86482A9C6C0000E9D1B7 /* Navigation-tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigation-tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79E864B2A9C6C0000E9D1B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B79E864D2A9C6C0000E9D1B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74541262AB343CB001959EA /* RxSwift in Frameworks */,
+				B74541242AB343CB001959EA /* RxRelay in Frameworks */,
+				B74541222AB343CB001959EA /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +110,7 @@
 				B7EEAD952AAB49720046FDB0 /* UINavigationController+Ext.swift */,
 				B74540F12AAF4979001959EA /* NavigationPoppedDelegate.swift */,
 				B74540F32AB028EA001959EA /* Notification+Name.swift */,
+				B74540F52AB17989001959EA /* MyNavigationController.swift */,
 			);
 			path = "Navigation-tutorial";
 			sourceTree = "<group>";
@@ -122,6 +131,11 @@
 			dependencies = (
 			);
 			name = "Navigation-tutorial";
+			packageProductDependencies = (
+				B74541212AB343CB001959EA /* RxCocoa */,
+				B74541232AB343CB001959EA /* RxRelay */,
+				B74541252AB343CB001959EA /* RxSwift */,
+			);
 			productName = "Navigation-tutorial";
 			productReference = B79E86482A9C6C0000E9D1B7 /* Navigation-tutorial.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +164,9 @@
 				Base,
 			);
 			mainGroup = B79E863F2A9C6C0000E9D1B7;
+			packageReferences = (
+				B74541202AB343CB001959EA /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = B79E86492A9C6C0000E9D1B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -189,6 +206,7 @@
 				B74540F42AB028EA001959EA /* Notification+Name.swift in Sources */,
 				B79E86822A9C8B0000E9D1B7 /* SecondVC.swift in Sources */,
 				B79E867A2A9C7CEA00E9D1B7 /* DetailVC.swift in Sources */,
+				B74540F62AB17989001959EA /* MyNavigationController.swift in Sources */,
 				B7EEAD962AAB49720046FDB0 /* UINavigationController+Ext.swift in Sources */,
 				B79E864C2A9C6C0000E9D1B7 /* AppDelegate.swift in Sources */,
 				B79E864E2A9C6C0000E9D1B7 /* SceneDelegate.swift in Sources */,
@@ -410,6 +428,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B74541202AB343CB001959EA /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B74541212AB343CB001959EA /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B74541202AB343CB001959EA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B74541232AB343CB001959EA /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B74541202AB343CB001959EA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		B74541252AB343CB001959EA /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B74541202AB343CB001959EA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B79E86402A9C6C0000E9D1B7 /* Project object */;
 }

@@ -81,11 +81,17 @@ class SecondVC: UIViewController {
         // - 네비게이션 컨트롤러 - [화면, 화면] 안에 어떤 화면들이 있는지 알 수 있다.
         // - 특정 화면으로 이동할 수 있는 함수가 존대 - popToViewController
         
-        self.navigationController?
-            .popToViewController(destinationVCType: FirstVC.self,
-                                 completion: {
-                self.dismissedWithData?(self.userInputTextFieldFromSecondVC.text ?? "")
-            })
+//        self.navigationController?
+//            .popToViewController(destinationVCType: FirstVC.self,
+//                                 completion: {
+//                self.dismissedWithData?(self.userInputTextFieldFromSecondVC.text ?? "")
+//            })
+        
+        if let navigation = self.navigationController as? MyNavigationController {
+            navigation.popToVC(senderVCType: SecondVC.self,
+                               destinationVCType: FirstVC.self,
+                               dataToSend: self.userInputTextFieldFromSecondVC.text ?? "")
+        }
     }
     
 }

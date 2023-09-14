@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxRelay
+import RxSwift
 
 class FirstVC: UIViewController {
     
@@ -31,6 +33,12 @@ class FirstVC: UIViewController {
         }
     }
     var stepNumberToPop: Int = 0
+    
+    var disposable: Disposable? = nil
+    
+    // 1. 어디에서 팝을 시키는지
+    // 2. 데이터도 보낸다
+    var poppedEventRelay = PublishRelay<(UIViewController.Type, Any)>()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,6 +71,10 @@ class FirstVC: UIViewController {
         navToSecondVCBtn.addTarget(self, action: #selector(navToSecondVC(_:)), for: .touchUpInside)
         navToDetailVCBtn.addTarget(self, action: #selector(navToDetailVC(_:)), for: .touchUpInside)
         navToThirdVCBtn.addTarget(self, action: #selector(navToThirdVC(_:)), for: .touchUpInside)
+        
+        disposable = poppedEventRelay.subscribe { (from, receivedData) in
+                print(#fileID, #function, #line, "- from: \(from), receivedData: \(receivedData)")
+            }
     }
     
     // DetailVC의 viewDidLoad가 실행되기 전에 데이터를 넣어줄 수 있다.
@@ -109,11 +121,8 @@ class FirstVC: UIViewController {
 
     @IBAction func onPushBtnClicked(_ sender: UIButton) {
         
-        // storyboard 가져오기
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "FirstVC") as? FirstVC {
-            vc.stepNumber = stepNumber + 1
-            self.navigationController?.pushViewController(vc, animated: true)
+        if let navigation = self.navigationController as? MyNavigationController {
+            navigation.pushToVC(route: .first(stepNumber + 1))
         }
     }
     
@@ -129,57 +138,38 @@ class FirstVC: UIViewController {
         }
     }
     
+    fileprivate func handleVCDismissed(_ receivedData: String) {
+        print(#fileID, #function, #line, "- receivedData: \(receivedData)")
+    }
+    
     @IBAction func handlePushAction(_ sender: NavigationButton) {
         print(#fileID, #function, #line, "- sender: \(sender.route)")
+        
+        guard let navigation = self.navigationController as? MyNavigationController else { return }
         
         var vcToNavigation: UIViewController? = nil
         
         switch sender.route {
-        case .secondVC:
-//            vcToNavigation = SecondVC.getInstance()
-            let dataToSend = userInputTextField.text ?? "no Value"
-            
-            let storyboard = UIStoryboard(name: "SecondVC", bundle: Bundle.main)
-            guard let secondVC = storyboard.instantiateViewController(identifier: "SecondVC", creator: { coder in
-                return SecondVC(coder: coder, someValue: dataToSend)
-            }) as? SecondVC else { return }
-            
-            secondVC.dismissedWithData = { receivedData in
-                print(#fileID, #function, #line, "- receivedData: \(receivedData)")
-            }
-            
-            vcToNavigation = secondVC
-            
-        case .thirdVC:
-//            vcToNavigation = ThirdVC.getInstance()
-            
-            let dataToSend = userInputTextField.text ?? "no Value"
-            
-            let thirdStoryboard = UIStoryboard(name: "ThirdVC", bundle: Bundle.main)
-            guard let thirdVC = thirdStoryboard.instantiateInitialViewController(creator: { coder in
-                return ThirdVC(coder: coder, someText: dataToSend)
-            }) as? ThirdVC else { return }
-            
-            thirdVC.delegate = self
-            
-            vcToNavigation = thirdVC
             
         case .detailVC:
-            let detailVC = DetailVC.getInstance()
             
-            // 클로져 이벤트가 들어왔을때에 대한 정의
-            detailVC?.dismissedWithData = { receivedValue in
-                print(#fileID, #function, #line, "- receivedValue: \(receivedValue)")
-                
-            }
+            let dataToSend = userInputTextField.text ?? "값이 없음"
+            navigation.pushToVC(route: .detail(dataToSend, handleVCDismissed(_:)))
+          
+        case .secondVC:
+            let dataToSend = userInputTextField.text ?? "no Value"
             
-            vcToNavigation = detailVC
+            navigation.pushToVC(route: .second(dataToSend, handleVCDismissed(_:)))
+            
+        case .thirdVC:
+            
+            let dataToSend = userInputTextField.text ?? "no Value"
+            navigation.pushToVC(route: .third(dataToSend, self))
+            
         case .fourthVC:
-            let fourthVC = FourthVC(stepNumber: 1)
-            
-            vcToNavigation = fourthVC
+            navigation.pushToVC(route: .fourth(340))
         case .fifthVC:
-            vcToNavigation = FifthVC()
+            navigation.pushToVC(route: .fifth(200))
         default:
             break
         }
@@ -205,20 +195,13 @@ class FirstVC: UIViewController {
     @IBAction func popToFirstVCWithStep(_ sender: UIButton) {
         print(#fileID, #function, #line, "- stepNumberToPop: \(stepNumberToPop)")
         
-        self.navigationController?.popToViewController(destinationVCType: FirstVC.self,
-                                                       when: { $0.stepNumber == self.stepNumberToPop },
-                                                       completion: {
-            print(#fileID, #function, #line, "- ")
-            
-            let notiDataToSend = ["senderType": FirstVC.self,
-                                  "dataToSend": "\(self.stepNumber)에서 보낸다"]
-            
-            // Notification으로 event 보내기
-            NotificationCenter.default.post(name: .NavigationPopEvent,
-                                            object: nil,
-                                            userInfo: notiDataToSend
-            )
-        })
+        
+        if let navigation = self.navigationController as? MyNavigationController {
+            navigation.popToVC(senderVCType: FirstVC.self,
+                               destinationVCType: FirstVC.self,
+                               when: { $0.stepNumber == self.stepNumberToPop },
+                               dataToSend: "\(self.stepNumber)에서 보낸다")
+        }
     }
     
     @IBAction func handleNavStack(_ sender: NavigationButton) {

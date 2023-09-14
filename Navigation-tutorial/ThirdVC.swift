@@ -59,7 +59,7 @@ class ThirdVC: UIViewController {
         self.navigationController?
             .popToViewController(destinationVCType: sender.route.vcType,
                                  animated: true,
-                                 completion: {
+                                 completion: { _ in
                 print(#fileID, #function, #line, "- 팝 완료됨.")
             })
         

@@ -32,7 +32,7 @@ extension UINavigationController {
     func popToViewController<T: UIViewController>(destinationVCType: T.Type,
                                                   animated: Bool = true,
                                                   when: ((T) -> Bool)? = nil,
-                                                  completion: (() -> Void)? = nil
+                                                  completion: ((UIViewController) -> Void)? = nil
     )
     {
         guard let destinationVC = self.viewControllers.first(where: { vcItem in
@@ -55,10 +55,10 @@ extension UINavigationController {
         
         if animated, let coordinator = transitionCoordinator {
             coordinator.animate(alongsideTransition: nil) { _ in
-                completion?()
+                completion?(destinationVC)
             }
         } else {
-            completion?()
+            completion?(destinationVC)
         }
     }
     
